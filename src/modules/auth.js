@@ -1,3 +1,6 @@
+import {openModalFunc, closeModalFunc} from "./modal"
+
+
 export const authFunc = () => {
     const openAuthBtnElement = document.querySelector('#open-auth-btn')
     const authModalElement = document.querySelector("#auth-modal")
@@ -9,31 +12,8 @@ export const authFunc = () => {
     // Получаем данные из модальной формы
     const loginControlElement = document.querySelector("#login-control")
     const passwordControlElement = document.querySelector("#password-control")
-
-    // Для работы открытие/закрытие модального окно
-    const openModalFunc = () => {
-        authModalElement.classList.add("d-block")
-        setTimeout(() => {
-            authModalElement.classList.add("show")
-        }, 100)
-    }
-
-    const closeModalFunc = () => {
-
-        modalWindowCloseElements.forEach((modalWindowCloseElement, modalWindowCloseElementIndex) => {
-
-            modalWindowCloseElement.addEventListener("click", () => {
-
-                authModalElement.classList.remove("show")
-
-                setTimeout(() => {
-
-                    authModalElement.classList.remove("d-block")
-
-                }, 450)
-            })
-        })
-    }
+    // 
+    const cardModalElement = document.querySelector("#cart-modal")
 
     //  Функция для войти и выйти
 
@@ -75,10 +55,16 @@ export const authFunc = () => {
     }
 
     // Вызов функций и события
-    openAuthBtnElement.addEventListener("click", openModalFunc)
+    openAuthBtnElement.addEventListener("click", ()=>{
+        openModalFunc(authModalElement)
+    })
     loginElment.addEventListener("click", loginFunc)
     logoutBtnElment.addEventListener("click", logoutFunc)
 
-    closeModalFunc()
+    closeModalFunc(authModalElement)
+    openCartBtnElement.addEventListener("click", ()=>{
+        openModalFunc(cardModalElement)
+    }) 
+    
     checkAuthFunc()
 }
