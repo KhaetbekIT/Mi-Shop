@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/reset-bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
     <title>Mi Shop</title>
 </head>
 
@@ -416,7 +417,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
-                    <button type="button" class="btn-close close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close close-btn" data-bs-dismiss="modal" aria-label="Close"
+                        id="modal-window-close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
@@ -427,8 +429,9 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark close-btn" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-dark login-btn">Войти</button>
+                    <button type="button" class="btn btn-outline-dark close-btn" data-bs-dismiss="modal"
+                        id="modal-window-close">Отмена</button>
+                    <button type="button" class="btn btn-dark login-btn" id="login">Войти</button>
                 </div>
             </div>
         </div>
@@ -439,7 +442,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
-                    <button type="button" class="btn-close close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close close-btn" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body cart-modal-body">
                     <div class="container-fluid" id="cart-container">
@@ -583,7 +587,8 @@
                         <h4 id="cart-totlal-price">1200 ₽</h4>
                     </div>
                     <button type="button" class="btn btn-dark">Оформить заказ</button>
-                    <button type="button" class="btn btn-outline-dark me-2 close-btn" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-outline-dark me-2 close-btn"
+                        data-bs-dismiss="modal">Отмена</button>
                 </div>
             </div>
         </div>
