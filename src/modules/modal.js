@@ -1,6 +1,11 @@
 export const openModalFunc = (modal) => {
     modal.classList.add("d-block")
+    document.body.insertAdjacentHTML("beforeend", `
+        <div id="layout" class="modal-backdrop fade"></div>
+    `)
     setTimeout(() => {
+        const layout = document.querySelector("#layout");
+        layout.classList.add("show")
         modal.classList.add("show")
     }, 500)
 
@@ -9,6 +14,10 @@ export const openModalFunc = (modal) => {
 export const closeModalFunc = (modal) => {
     modal.classList.remove("show")
     setTimeout(() => {
+        const layout = document.querySelector("#layout");
+        if (layout) {
+            layout.classList.remove("show")
+        }
         modal.classList.remove("d-block")
     }, 500)
 
