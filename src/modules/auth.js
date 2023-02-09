@@ -20,8 +20,17 @@ export const AuthFunc = (input, password, login) => {
 }
 
 export const CHeckAuthFunc = (modal, removeOne, removeTwo, openAuth) => {
-    if (JSON.parse(localStorage.getItem("auth"))) {
-        ModalLoginFunc(modal, removeOne, removeTwo, openAuth)
+    let user = JSON.parse(localStorage.getItem("auth"))
+    if (user) {
+        
+        GetAPIFunc("http://localhost:3001/profile").then((data) => {
+            if (
+                (data.login === user.lognUser) &&
+                (data.password === user.passUser)
+            ) {
+                ModalLoginFunc(modal, removeOne, removeTwo, openAuth)
+            }
+        })
     }
 }
 
