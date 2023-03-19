@@ -16,7 +16,7 @@ export const closeModalFunc = (modal) => {
     setTimeout(() => {
         const layout = document.querySelector("#layout");
         if (layout) {
-            layout.classList.remove("show")
+            layout.remove()
         }
         modal.classList.remove("d-block")
     }, 500)
