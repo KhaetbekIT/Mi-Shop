@@ -8,7 +8,7 @@ export const AuthFunc = (input, password, login) => {
             passUser: password.value,
         }
         
-        GetAPIFunc("http://localhost:3001/profile").then((data) => {
+        GetAPIFunc("/profile").then((data) => {
             if (
                 (data.login === user.lognUser) &&
                 (data.password === user.passUser)
@@ -23,7 +23,7 @@ export const CHeckAuthFunc = (modal, removeOne, removeTwo, openAuth) => {
     let user = JSON.parse(localStorage.getItem("auth"))
     if (user) {
         
-        GetAPIFunc("http://localhost:3001/profile").then((data) => {
+        GetAPIFunc("/profile").then((data) => {
             if (
                 (data.login === user.lognUser) &&
                 (data.password === user.passUser)
