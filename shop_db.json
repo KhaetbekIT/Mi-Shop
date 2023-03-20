@@ -2,5 +2,25 @@
   "profile": {
     "login": "Khaetbek",
     "password": "2003"
-  }
+  },
+  "catalog":[
+    {
+      "id": 0,
+      "category": 0,
+      "name": "Смартфон",
+      "image": "./images/phones/preview.jpg"
+    },
+    {
+      "id": 1,
+      "category": 1,
+      "name": "Аксессуары",
+      "image": "./images/accessory/preview.jpg"
+    },
+    {
+      "id": 2,
+      "category": 2,
+      "name": "Умные устройства",
+      "image": "./images/usage/preview.jpg"
+    }
+  ]
 }
