@@ -25,7 +25,7 @@ export const CartFunc = () => {
     
                                     <div class="row">
                                         <div class="col d-flex align-itemns-center justify-content-between">
-                                            <h4>4 990 ₽</h4>
+                                            <h4>${price} ₽</h4>
                                             <button type="button" class="btn btn-outline-dark">
     
                                                 <img src="./images/icon/shopping-cart-big.svg" alt="login">
