@@ -22,5 +22,103 @@
       "name": "Умные устройства",
       "image": "./images/usage/preview.jpg"
     }
+  ],
+  "products":[
+    {
+      "id": 0,
+      "category": 0,
+      "title": "Xiaomi Redmi A1+ 2/32GB (голубой)",
+      "productName": "Смартфон",
+      "image": "./images/phones/phone-1.jpg",
+      "price":4990
+    },
+    {
+      "id": 1,
+      "category": 0,
+      "title": "Xiaomi Redmi A1+ 2/32GB (голубой)",
+      "productName": "Смартфон",
+      "image": "./images/phones/phone-1.jpg",
+      "price":4990
+    },
+    {
+      "id": 2,
+      "category": 0,
+      "title": "Xiaomi Redmi A1+ 2/32GB (голубой)",
+      "productName": "Смартфон",
+      "image": "./images/phones/phone-1.jpg",
+      "price":4990
+    },
+    {
+      "id": 3,
+      "category": 0,
+      "title": "Xiaomi Redmi A1+ 2/32GB (голубой)",
+      "productName": "Смартфон",
+      "image": "./images/phones/phone-1.jpg",
+      "price":4990
+    },
+    {
+      "id": 4,
+      "category": 1,
+      "title": "Red Line Ultimate для Xiaomi Redmi 9C (оранжевый)",
+      "productName": "Чехол",
+      "image": "./images/accessory/accessory-1.jpg",
+      "price":290
+    },
+    {
+      "id": 5,
+      "category": 1,
+      "title": "Red Line Ultimate для Xiaomi Redmi 9C (оранжевый)",
+      "productName": "Чехол",
+      "image": "./images/accessory/accessory-1.jpg",
+      "price":290
+    },
+    {
+      "id": 6,
+      "category": 1,
+      "title": "Red Line Ultimate для Xiaomi Redmi 9C (оранжевый)",
+      "productName": "Чехол",
+      "image": "./images/accessory/accessory-1.jpg",
+      "price":290
+    },
+    {
+      "id": 7,
+      "category": 1,
+      "title": "Red Line Ultimate для Xiaomi Redmi 9C (оранжевый)",
+      "productName": "Чехол",
+      "image": "./images/accessory/accessory-1.jpg",
+      "price":290
+    },
+    {
+      "id": 8,
+      "category": 2,
+      "title": "Amazfit GTS 4 mini (черный)",
+      "productName": "Умные часы",
+      "image": "./images/usage/usage-1.jpg",
+      "price":7490
+    },
+    {
+      "id": 9,
+      "category": 2,
+      "title": "Amazfit GTS 4 mini (черный)",
+      "productName": "Умные часы",
+      "image": "./images/usage/usage-1.jpg",
+      "price":7490
+    },
+    {
+      "id": 10,
+      "category": 2,
+      "title": "Amazfit GTS 4 mini (черный)",
+      "productName": "Умные часы",
+      "image": "./images/usage/usage-1.jpg",
+      "price":7490
+    },
+    {
+      "id": 11,
+      "category": 2,
+      "title": "Amazfit GTS 4 mini (черный)",
+      "productName": "Умные часы",
+      "image": "./images/usage/usage-1.jpg",
+      "price":7490
+    }
   ]
 }
