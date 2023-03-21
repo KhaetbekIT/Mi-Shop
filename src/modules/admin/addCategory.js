@@ -1,3 +1,5 @@
+import { GetAPIFunc, PostDataFunc } from "../api"
+
 export const AddCategoryFunc = () => {
 
     const inputNameElement = document.querySelector("#category-name")
@@ -37,14 +39,27 @@ export const AddCategoryFunc = () => {
                 inputImageElement.value = ""
             })
 
-
             readerFile.readAsDataURL(file)
+
         } else {
-            console.error("Not ok!");
             inputImageElement.value = ""
         }
 
         CheckValueFunc()
+    })
+
+    addButtonElement.addEventListener("click", ()=>{
+        PostDataFunc("/catalog", {
+            method: "POST",
+            body: JSON.stringify(categoryData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(data =>{
+            GetAPIFunc("/catalog").then(data =>{
+                console.log(data);
+            })
+        })
     })
 
     CheckValueFunc()
