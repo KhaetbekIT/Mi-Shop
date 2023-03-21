@@ -1,4 +1,4 @@
-import { GetAPIFunc, PostDataFunc } from "../api"
+import { DeleteDataFunc, GetAPIFunc, PostDataFunc } from "../api"
 
 export const AddCategoryFunc = () => {
 
@@ -30,7 +30,7 @@ export const AddCategoryFunc = () => {
                         <th scope="row">${index + 1}</th>
                         <td>${name}</td>
                         <td class="text-end">
-                            <button type="button" class="btn btn-outline-danger btn-sm">
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-category-id="${id}">
                                 удалить
                             </button>
                         </td>
@@ -79,6 +79,16 @@ export const AddCategoryFunc = () => {
         }).then(data => {
             UpdateTable()
         })
+    })
+
+    container.addEventListener("click", e =>{
+        if(e.target.tagName === "BUTTON"){
+            const id = e.target.dataset.categoryId
+
+            DeleteDataFunc(`/catalog/${id}`).then(data =>{
+                UpdateTable()
+            })
+        }
     })
 
     UpdateTable()
