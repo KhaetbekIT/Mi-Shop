@@ -5,6 +5,7 @@ export const AddCategoryFunc = () => {
     const inputNameElement = document.querySelector("#category-name")
     const inputImageElement = document.querySelector("#category-image")
     const addButtonElement = document.querySelector("#category-add-btn")
+    const container = document.querySelector("#category-container")
 
     const categoryData = {
         name: "",
@@ -17,6 +18,26 @@ export const AddCategoryFunc = () => {
         } else {
             addButtonElement.disabled = false
         }
+    }
+
+    const UpdateTable = () => {
+        GetAPIFunc("/catalog").then(data => {
+            container.innerHTML = ""
+            data.map((item, index) => {
+                const {id, name} = item
+                container.insertAdjacentHTML("beforeend", `
+                    <tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${name}</td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-outline-danger btn-sm">
+                                удалить
+                            </button>
+                        </td>
+                    </tr>
+                `)
+            })
+        })
     }
 
     inputNameElement.addEventListener("input", () => {
@@ -48,19 +69,18 @@ export const AddCategoryFunc = () => {
         CheckValueFunc()
     })
 
-    addButtonElement.addEventListener("click", ()=>{
+    addButtonElement.addEventListener("click", () => {
         PostDataFunc("/catalog", {
             method: "POST",
             body: JSON.stringify(categoryData),
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(data =>{
-            GetAPIFunc("/catalog").then(data =>{
-                console.log(data);
-            })
+        }).then(data => {
+            UpdateTable()
         })
     })
 
+    UpdateTable()
     CheckValueFunc()
 }
