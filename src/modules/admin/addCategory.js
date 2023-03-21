@@ -99,4 +99,9 @@ export const AddCategoryFunc = () => {
 
     UpdateTable()
     CheckValueFunc()
+
+    /* Смартфон 	Xiaomi Redmi A1+ 2/32GB (голубой) 4990
+        Чехол 	Red Line Ultimate для Xiaomi Redmi 9C (оранжевый) 290
+        Умные часы 	Amazfit GTS 4 mini (черный) 7490
+    */
 }
