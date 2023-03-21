@@ -6,6 +6,7 @@ export const AddCategoryFunc = () => {
     const inputImageElement = document.querySelector("#category-image")
     const addButtonElement = document.querySelector("#category-add-btn")
     const container = document.querySelector("#category-container")
+    const selctElement = document.querySelector("#product-category")
 
     const categoryData = {
         name: "",
@@ -35,6 +36,9 @@ export const AddCategoryFunc = () => {
                             </button>
                         </td>
                     </tr>
+                `)
+                selctElement.insertAdjacentHTML("beforeend", `
+                    <option value="${id}">${name}</option>
                 `)
             })
         })
