@@ -1,0 +1,1 @@
+(() => { "use strict"; (() => { const e = document.querySelector("#category-name"), t = document.querySelector("#category-image"), d = document.querySelector("#category-add-btn"), r = () => { "" === e.value.trim() || "" === t.value ? d.disabled = !0 : d.disabled = !1 }; e.addEventListener("input", r()), t.addEventListener("input", r()), r() })() })();
