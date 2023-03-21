@@ -77,6 +77,8 @@ export const AddCategoryFunc = () => {
                 "Content-Type": "application/json"
             }
         }).then(data => {
+            inputImageElement.value = ""
+            inputNameElement.value = ""
             UpdateTable()
         })
     })
