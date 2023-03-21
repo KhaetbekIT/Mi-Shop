@@ -25,15 +25,15 @@ export const AddProductFunc = () => {
                 container.insertAdjacentHTML("beforeend", `
                     <tr>
                         <th scope="row">${index + 1}</th>
-                        <td>${productName}</td>
                         <td>${title}</td>
+                        <td>${productName}</td>
                         <td>${price} ₽</td>
                         <td class="text-end">
                             <button type="button" class="btn btn-outline-danger btn-sm" data-product-id="${id}">
                                 удалить
                             </button>
                         </td>
-                    </tr>
+                    </tr>   
                 `)
             })
         })
@@ -59,6 +59,31 @@ export const AddProductFunc = () => {
     }
 
     selectCategoryElement.addEventListener("change", () => {
+        productData.category = selectCategoryElement.value
+
+        const id = selectCategoryElement.value !== "default" ? `/products?category=${selectCategoryElement.value}` : "/products"
+
+        GetAPIFunc(id).then(data => {
+            console.log(id);
+            container.innerHTML = ""
+            data.map((item, index) => {
+                const { title, productName, price, id } = item
+                container.insertAdjacentHTML("beforeend", `
+                    <tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${title}</td>
+                        <td>${productName}</td>
+                        <td>${price} ₽</td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-product-id="${id}">
+                                удалить
+                            </button>
+                        </td>
+                    </tr>
+                `)
+            })
+        })
+
         CheckValueFunc()
     })
 
@@ -118,7 +143,7 @@ export const AddProductFunc = () => {
     container.addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
             const id = e.target.dataset.productId
-            DeleteDataFunc(`/products/${id}`).then(()=>{
+            DeleteDataFunc(`/products/${id}`).then(() => {
                 UpdateTableFunc()
             })
         }
