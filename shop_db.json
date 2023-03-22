@@ -46,5 +46,18 @@
       "id": 3
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "name": "Amazfit GTS 4 mini (черный)",
+      "price": 7490,
+      "count": 0,
+      "id": 1
+    },
+    {
+      "name": "Xiaomi Redmi A1+ 2/32GB (голубой)",
+      "price": 4990,
+      "count": 1,
+      "id": 2
+    }
+  ]
 }
