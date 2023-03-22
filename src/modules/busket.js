@@ -2,6 +2,16 @@ import { GetAPIFunc, PatchDataFunc } from "./api"
 
 export const BusketFunc = () => {
     const container = document.querySelector("#cart-container")
+    const totalPriceElement = document.querySelector("#cart-totlal-price")
+
+    const UpdateTotalPriceFunc = (data) =>{
+        let total = 0
+        data.forEach(element => {
+            total += (Number(element.count) * Number(element.price))
+        })
+
+        totalPriceElement.innerText = total + " ₽"
+    }
 
     const UpdateBusketFunc = () => {
         GetAPIFunc("/cart").then(data => {
@@ -29,6 +39,8 @@ export const BusketFunc = () => {
                     </div>
                 `)
             })
+
+            UpdateTotalPriceFunc(data)
         })
     }
 
