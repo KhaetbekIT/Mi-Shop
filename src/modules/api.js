@@ -1,4 +1,4 @@
-let HostAPI = "http://localhost:3001"
+let HostAPI = "https://mi-shop-sever-api.onrender.com"
 
 export const GetAPIFunc = (path) => {
     path = HostAPI + path
